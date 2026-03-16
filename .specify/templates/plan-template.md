@@ -31,7 +31,11 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] **GATE: SPEC_VALIDATED**: Is the `spec.md` ratified with prioritized user stories and measurable success criteria?
+- [ ] **GATE: PLAN_RATIFIED**: Is this `plan.md` complete with tech stack, data models, and structure before task generation?
+- [ ] **GATE: STORY_INDEPENDENCE**: Are implementation phases organized by user story? Is each story independently testable?
+- [ ] **GATE: TASKS_ORDERED**: Will `tasks.md` have IDs, story labels, file paths, and dependency ordering?
+- [ ] **GATE: ANALYZE_PASSED**: Is a `/speckit.analyze` run planned before implementation begins?
 
 ## Project Structure
 
