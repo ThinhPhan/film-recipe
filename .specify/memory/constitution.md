@@ -46,6 +46,17 @@ The `/speckit.analyze` command MUST be executed after task generation and before
 4. **Analyze**: Verify consistency across all artifacts using `/speckit.analyze`.
 5. **Implement**: Execute tasks in `tasks.md` using `/speckit.implement`.
 
+### Architecture
+- Keep business logic separate
+- No circular dependencies
+- Files under 300 lines
+
+### Code Style
+- TypeScript everywhere
+- Functions need JSDoc comments
+- Functions over classes when possible
+- Keep it simple
+
 ### Documentation Standards
 - All design artifacts MUST reside in the feature directory (e.g., `specs/###-feature-name/`).
 - Diagrams and data models should be kept alongside the plan.
@@ -57,6 +68,12 @@ The `/speckit.analyze` command MUST be executed after task generation and before
 - **Self-Containment**: Every feature should be as self-contained as possible, minimizing tight coupling between unrelated components.
 - **Verification**: Every user story MUST have an "Independent Test" scenario defined in the spec and verified in the implementation phase.
 - **Simplicity**: Follow YAGNI (You Ain't Gonna Need It) principles. Avoid premature abstraction and keep implementations focused on the specific requirements of the current user stories.
+
+### Testing
+- Every function needs a test
+- Unit/Component Testing: Use Jest, React Native Testing Librar, @testing-library/jest-native
+- End-to-End (E2E) Testing: Simulate full user flows across the entire application.
+- Aim for 80% coverage
 
 ## Governance
 This constitution supersedes all other informal practices. Amendments to these principles require a version bump (MINOR for additions/clarifications, MAJOR for removals or fundamental redefinitions). All pull requests must be reviewed against these core principles.
