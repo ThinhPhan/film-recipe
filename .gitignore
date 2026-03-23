@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.env*
+
+# React Native
+ios/Pods/
+ios/build/
+ios/*.xcworkspace
+android/app/build/
+android/.gradle/
+android/app/*.iml
+android/local.properties
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Universal
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
