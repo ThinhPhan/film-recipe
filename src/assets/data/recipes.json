@@ -1,0 +1,75 @@
+[
+  {
+    "id": "1",
+    "title": "Portra 400 Warm",
+    "filmStock": "Kodak Portra 400",
+    "images": [
+      "https://picsum.photos/seed/1/400/600",
+      "https://picsum.photos/seed/11/400/600",
+      "https://picsum.photos/seed/111/400/600"
+    ],
+    "settings": {
+      "Exposure": "+1",
+      "White Balance": "Auto",
+      "Dynamic Range": "DR400",
+      "Grain Effect": "Strong",
+      "Color Chrome": "Off"
+    },
+    "cameraCompatibility": ["X-T4", "X-T5", "X-Pro3"],
+    "tags": ["Warm", "Portrait", "Daylight"],
+    "isPremium": false
+  },
+  {
+    "id": "2",
+    "title": "HP5 High Contrast",
+    "filmStock": "Ilford HP5 Plus",
+    "images": [
+      "https://picsum.photos/seed/2/400/600",
+      "https://picsum.photos/seed/22/400/600"
+    ],
+    "settings": {
+      "Exposure": "0",
+      "White Balance": "Daylight",
+      "Dynamic Range": "DR100",
+      "Grain Effect": "Weak",
+      "Shadow": "+2",
+      "Highlight": "+1"
+    },
+    "cameraCompatibility": ["X-H2", "X-T30 II"],
+    "tags": ["B&W", "Street", "High Contrast"],
+    "isPremium": false
+  },
+  {
+    "id": "3",
+    "title": "Fujicolor C200 Natural",
+    "filmStock": "Fujifilm C200",
+    "images": [
+      "https://picsum.photos/seed/3/400/600",
+      "https://picsum.photos/seed/33/400/600"
+    ],
+    "settings": {
+      "Exposure": "+0.3",
+      "White Balance": "Cloudy",
+      "Dynamic Range": "DR200"
+    },
+    "cameraCompatibility": ["X-E4", "X100V"],
+    "tags": ["Natural", "Everyday"],
+    "isPremium": true
+  },
+  {
+    "id": "4",
+    "title": "Gold 200 Golden Hour",
+    "filmStock": "Kodak Gold 200",
+    "images": [
+      "https://picsum.photos/seed/4/400/600"
+    ],
+    "settings": {
+      "Exposure": "+0.7",
+      "White Balance": "5500K",
+      "Dynamic Range": "DR400"
+    },
+    "cameraCompatibility": ["All X-Series"],
+    "tags": ["Warm", "Sunset"],
+    "isPremium": false
+  }
+]
