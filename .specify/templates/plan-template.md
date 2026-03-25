@@ -36,6 +36,8 @@
 - [ ] **GATE: STORY_INDEPENDENCE**: Are implementation phases organized by user story? Is each story independently testable?
 - [ ] **GATE: TASKS_ORDERED**: Will `tasks.md` have IDs, story labels, file paths, and dependency ordering?
 - [ ] **GATE: ANALYZE_PASSED**: Is a `/speckit.analyze` run planned before implementation begins?
+- [ ] **GATE: CODE_MODULARITY**: Will the implementation follow SOLID principles and maintain high modularity?
+- [ ] **GATE: UNIT_TESTS_PASSED**: Are unit tests planned for all core logic and edge cases?
 
 ## Project Structure
 

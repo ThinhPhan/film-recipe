@@ -1,19 +1,14 @@
 <!--
 Sync Impact Report
-- Version change: Template → 1.0.0
-- List of modified principles:
-    - [PRINCIPLE_1_NAME] → I. Spec-First Development (GATE: SPEC_VALIDATED)
-    - [PRINCIPLE_2_NAME] → II. Architecture-Guided Implementation (GATE: PLAN_RATIFIED)
-    - [PRINCIPLE_3_NAME] → III. User-Story Centricity (GATE: STORY_INDEPENDENCE)
-    - [PRINCIPLE_4_NAME] → IV. Task-Driven Accountability (GATE: TASKS_ORDERED)
-    - [PRINCIPLE_5_NAME] → V. Quality & Consistency Analysis (GATE: ANALYZE_PASSED)
-- Added sections: Development Workflow, Technical Constraints
+- Version change: 1.0.0 → 1.1.0
+- List of modified principles: None
+- Added sections:
+    - VI. Clean & Modular Code (GATE: CODE_MODULARITY)
+    - VII. Comprehensive Unit Testing (GATE: UNIT_TESTS_PASSED)
 - Removed sections: None
 - Templates requiring updates:
     - .specify/templates/plan-template.md (✅ updated)
-    - .specify/templates/spec-template.md (✅ aligned)
-    - .specify/templates/tasks-template.md (✅ aligned)
-    - .gemini/commands/speckit.constitution.toml (✅ updated GEMINI reference)
+    - .specify/templates/tasks-template.md (✅ updated)
 - Follow-up TODOs: None
 -->
 
@@ -37,6 +32,12 @@ All implementation work MUST be tracked in an actionable `tasks.md` file. Every 
 ### V. Quality & Consistency Analysis (GATE: ANALYZE_PASSED)
 The `/speckit.analyze` command MUST be executed after task generation and before implementation. This cross-artifact analysis ensures alignment between the spec, plan, and tasks. All "CRITICAL" findings must be resolved or explicitly justified before proceeding to code.
 
+### VI. Clean & Modular Code (GATE: CODE_MODULARITY)
+Implementation MUST follow SOLID principles and maintain high modularity. Components SHOULD be loosely coupled and highly cohesive. "Spaghetti code" or monolithic files are violations. Every logical unit should be encapsulated and easily replaceable or extendable to ensure long-term maintainability.
+
+### VII. Comprehensive Unit Testing (GATE: UNIT_TESTS_PASSED)
+Every new feature or bug fix MUST be accompanied by unit tests. Unit tests must cover edge cases, error conditions, and core logic. Code coverage should be monitored, aiming for high visibility into critical paths. Unit tests are mandatory and must pass before a feature is considered complete.
+
 ## Development Workflow
 
 ### Feature Lifecycle
@@ -45,6 +46,17 @@ The `/speckit.analyze` command MUST be executed after task generation and before
 3. **Task**: Generate actionable tasks in `tasks.md` using `/speckit.tasks`.
 4. **Analyze**: Verify consistency across all artifacts using `/speckit.analyze`.
 5. **Implement**: Execute tasks in `tasks.md` using `/speckit.implement`.
+
+### Architecture
+- Keep business logic separate
+- No circular dependencies
+- Files under 300 lines
+
+### Code Style
+- TypeScript everywhere
+- Functions need JSDoc comments
+- Functions over classes when possible
+- Keep it simple
 
 ### Documentation Standards
 - All design artifacts MUST reside in the feature directory (e.g., `specs/###-feature-name/`).
@@ -58,7 +70,13 @@ The `/speckit.analyze` command MUST be executed after task generation and before
 - **Verification**: Every user story MUST have an "Independent Test" scenario defined in the spec and verified in the implementation phase.
 - **Simplicity**: Follow YAGNI (You Ain't Gonna Need It) principles. Avoid premature abstraction and keep implementations focused on the specific requirements of the current user stories.
 
+### Testing
+- Every function needs a test
+- Unit/Component Testing: Use Jest, React Native Testing Librar, @testing-library/jest-native
+- End-to-End (E2E) Testing: Simulate full user flows across the entire application.
+- Aim for 80% coverage
+
 ## Governance
 This constitution supersedes all other informal practices. Amendments to these principles require a version bump (MINOR for additions/clarifications, MAJOR for removals or fundamental redefinitions). All pull requests must be reviewed against these core principles.
 
-**Version**: 1.0.0 | **Ratified**: 2026-03-13 | **Last Amended**: 2026-03-13
+**Version**: 1.1.0 | **Ratified**: 2026-03-13 | **Last Amended**: 2026-03-17
