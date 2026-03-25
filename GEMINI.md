@@ -22,13 +22,19 @@ npm test && npm run lint
 
 ## Code Style
 
-TypeScript (Latest): Follow standard conventions
+TypeScript (Latest), React Native (latest stable CLI): Follow standard conventions
 
 ## Recent Changes
-- 002-premium-subscription: Added TypeScript (Latest) + `react-native-iap`, `@react-native-firebase/auth`, `tanstack-query`, `zustand`, `revenuecat-purchases-typescript`
-- 001-film-recipe-mobile-app: Added TypeScript (Latest) + React Native (CLI), React Navigation, Zustand, TanStack Query, TanStack Form, react-native-fast-image
-- 001-film-recipe-mobile-app: Added TypeScript (Latest), React Native (latest stable CLI) + React Navigation, Zustand, TanStack Query, TanStack Form, react-native-fast-image
+
+- 004-explore-detail-screens: Added TypeScript (Latest) + React Native, React Navigation, Zustand, TanStack Query, react-native-fast-image, `@shopify/flash-list` (for high-performance grid), `react-native-reanimated`
+
 - 003-recipe-list-screen: Added TypeScript (Latest) + React Native, React Navigation, TanStack Query, Zustand, `@shopify/flash-list` (for high-performance list), `react-native-fast-image`
-TypeScript (Latest), React Native (latest stable CLI): Follow standard conventions
+
+- 002-premium-subscription: Added TypeScript (Latest) + `react-native-iap`, `@react-native-firebase/auth`, `tanstack-query`, `zustand`, `revenuecat-purchases-typescript`
+
+- 001-film-recipe-mobile-app: Added TypeScript (Latest) + React Native (CLI), React Navigation, Zustand, TanStack Query, TanStack Form, react-native-fast-image
+
+- 001-film-recipe-mobile-app: Added TypeScript (Latest), React Native (latest stable CLI) + React Navigation, Zustand, TanStack Query, TanStack Form, react-native-fast-image
+
 <!-- MANUAL ADDITIONS START -->
 <!-- MANUAL ADDITIONS END -->

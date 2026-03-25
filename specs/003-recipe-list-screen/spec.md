@@ -3,7 +3,7 @@
 **Feature Branch**: `003-recipe-list-screen`  
 **Created**: 2026-03-18  
 **Status**: Draft  
-**Input**: User description: "Implement Home screen (HomeScreen.tsx) to browse all recipes via a vertical list (RecipeList.tsx). UI Elements: Header (title + actions), Filter button, Sort menu. Interactions: Tap recipe → RecipeDetail, Tap filter → FilterModal, Tap sort → SortMenu. States: Loading, Empty, Error."
+**Input**: User description: "Breakdown for Home screen screens/recipes-list.md Purpose: Browse all recipes UI Elements: Header (title + actions) Filter button Sort menu Recipe list (vertical) Interactions: Tap recipe → navigate to RecipeDetail Tap filter → open filter modal Tap sort → open sort menu States: Loading Empty Error"
 
 ## User Scenarios & Testing *(mandatory)*
 
