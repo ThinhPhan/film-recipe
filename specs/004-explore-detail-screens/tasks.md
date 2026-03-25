@@ -46,15 +46,15 @@
 
 ### Tests for User Story 1
 
-- [ ] T010 [P] [US1] Add unit tests for `MasonryGrid` in `tests/unit/explore/MasonryGrid.test.tsx`
-- [ ] T011 [US1] Add integration test for discovery flow in `tests/integration/discovery-flow/Explore.test.tsx`
+- [x] T010 [P] [US1] Add unit tests for `MasonryGrid` in `tests/unit/explore/MasonryGrid.test.tsx`
+- [x] T011 [US1] Add integration test for discovery flow in `tests/integration/discovery-flow/Explore.test.tsx`
 
 ### Implementation for User Story 1
 
-- [ ] T012 [P] [US1] Create `MasonryGrid` component in `src/components/grid/MasonryGrid.tsx` (using MasonryFlashList)
-- [ ] T013 [P] [US1] Create `ExploreCard` component in `src/components/common/Card.tsx` (with overlay text)
-- [ ] T014 [US1] Implement `ExploreScreen` in `src/screens/ExploreScreen.tsx` with layout toggle
-- [ ] T015 [US1] Configure navigation to `ExploreScreen` in `src/app/navigation/TabNavigator.tsx`
+- [x] T012 [P] [US1] Create `MasonryGrid` component in `src/components/grid/MasonryGrid.tsx` (using MasonryFlashList)
+- [x] T013 [P] [US1] Create `ExploreCard` component in `src/components/common/Card.tsx` (with overlay text)
+- [x] T014 [US1] Implement `ExploreScreen` in `src/screens/ExploreScreen.tsx` with layout toggle
+- [x] T015 [US1] Configure navigation to `ExploreScreen` in `src/app/navigation/TabNavigator.tsx`
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -68,16 +68,16 @@
 
 ### Tests for User Story 2
 
-- [ ] T016 [P] [US2] Add unit tests for `ImageCarousel` in `tests/unit/recipe/ImageCarousel.test.tsx`
-- [ ] T017 [US2] Add integration test for detail view flow in `tests/integration/discovery-flow/Detail.test.tsx`
+- [x] T016 [P] [US2] Add unit tests for `ImageCarousel` in `tests/unit/recipe/ImageCarousel.test.tsx`
+- [x] T017 [US2] Add integration test for detail view flow in `tests/integration/discovery-flow/Detail.test.tsx`
 
 ### Implementation for User Story 2
 
-- [ ] T018 [P] [US2] Create `ImageCarousel` component in `src/components/recipe/ImageCarousel.tsx` (using react-native-reanimated-carousel)
-- [ ] T019 [P] [US2] Create `SettingsList` component in `src/components/recipe/SettingsList.tsx` (dynamic key-value pairs)
-- [ ] T020 [US2] Implement `RecipeDetailScreen` in `src/screens/RecipeDetailScreen.tsx`
-- [ ] T021 [US2] Implement local notes input with 5,000 char limit in `src/screens/RecipeDetailScreen.tsx`
-- [ ] T022 [US2] Configure stack navigation from `Explore` to `RecipeDetail` in `src/app/navigation/RootNavigator.tsx`
+- [x] T018 [P] [US2] Create `ImageCarousel` component in `src/components/recipe/ImageCarousel.tsx` (using react-native-reanimated-carousel)
+- [x] T019 [P] [US2] Create `SettingsList` component in `src/components/recipe/SettingsList.tsx` (dynamic key-value pairs)
+- [x] T020 [US2] Implement `RecipeDetailScreen` in `src/screens/RecipeDetailScreen.tsx`
+- [x] T021 [US2] Implement local notes input with 5,000 char limit in `src/screens/RecipeDetailScreen.tsx`
+- [x] T022 [US2] Configure stack navigation from `Explore` to `RecipeDetail` in `src/app/navigation/RootNavigator.tsx`
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -91,13 +91,13 @@
 
 ### Tests for User Story 3
 
-- [ ] T023 [P] [US3] Add unit tests for gating logic in `tests/unit/recipe/Gating.test.tsx`
+- [x] T023 [P] [US3] Add unit tests for gating logic in `tests/unit/recipe/Gating.test.tsx`
 
 ### Implementation for User Story 3
 
-- [ ] T024 [US3] Add "Locked" badge to `ExploreCard` in `src/components/common/Card.tsx`
-- [ ] T025 [US3] Implement `PaywallOverlay` component in `src/components/recipe/PaywallOverlay.tsx`
-- [ ] T026 [US3] Integrate `PaywallOverlay` into `RecipeDetailScreen.tsx` for gated recipes
+- [x] T024 [US3] Add "Locked" badge to `ExploreCard` in `src/components/common/Card.tsx`
+- [x] T025 [US3] Implement `PaywallOverlay` component in `src/components/recipe/PaywallOverlay.tsx`
+- [x] T026 [US3] Integrate `PaywallOverlay` into `RecipeDetailScreen.tsx` for gated recipes
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -107,10 +107,10 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T027 [P] Optimize image priority for carousel vs grid in `src/components/recipe/ImageCarousel.tsx`
-- [ ] T028 [P] Add haptic feedback for favorite toggle and layout switch
-- [ ] T029 Code cleanup and final performance profiling for 60fps target
-- [ ] T030 Run `quickstart.md` validation and final UI walkthrough
+- [x] T027 [P] Optimize image priority for carousel vs grid in `src/components/recipe/ImageCarousel.tsx`
+- [x] T028 [P] Add haptic feedback for favorite toggle and layout switch
+- [x] T029 Code cleanup and final performance profiling for 60fps target
+- [x] T030 Run `quickstart.md` validation and final UI walkthrough
 
 ---
 
