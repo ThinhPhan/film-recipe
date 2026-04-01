@@ -3,13 +3,35 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 import { MMKV } from 'react-native-mmkv';
 import { UserRecipeNote } from '../types';
 
-const storage = new MMKV();
-
-const mmkvStorage = {
-  setItem: (name: string, value: string) => storage.set(name, value),
-  getItem: (name: string) => storage.getString(name) ?? null,
-  removeItem: (name: string) => storage.delete(name),
+type PersistStorage = {
+  setItem: (name: string, value: string) => void;
+  getItem: (name: string) => string | null;
+  removeItem: (name: string) => void;
 };
+
+const createStorage = (): PersistStorage => {
+  try {
+    const storage = new MMKV();
+    return {
+      setItem: (name: string, value: string) => storage.set(name, value),
+      getItem: (name: string) => storage.getString(name) ?? null,
+      removeItem: (name: string) => storage.delete(name),
+    };
+  } catch {
+    const memoryStorage = new Map<string, string>();
+    return {
+      setItem: (name: string, value: string) => {
+        memoryStorage.set(name, value);
+      },
+      getItem: (name: string) => memoryStorage.get(name) ?? null,
+      removeItem: (name: string) => {
+        memoryStorage.delete(name);
+      },
+    };
+  }
+};
+
+const persistStorage = createStorage();
 
 interface RecipeNotesState {
   notes: Record<string, UserRecipeNote>;
@@ -40,7 +62,7 @@ export const useRecipeNotesStore = create<RecipeNotesState>()(
     }),
     {
       name: 'recipe-notes-storage',
-      storage: createJSONStorage(() => mmkvStorage),
+      storage: createJSONStorage(() => persistStorage),
     }
   )
 );

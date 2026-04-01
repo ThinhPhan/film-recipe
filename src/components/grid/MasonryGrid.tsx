@@ -1,5 +1,5 @@
 import React from 'react';
-import { MasonryFlashList } from '@shopify/flash-list';
+import { FlashList } from '@shopify/flash-list';
 import { ExploreCard } from '../common/Card';
 import { Recipe } from '../../types';
 
@@ -21,7 +21,7 @@ export const MasonryGrid: React.FC<MasonryGridProps> = ({
   isPremiumUser
 }) => {
   return (
-    <MasonryFlashList
+    <FlashList
       data={data}
       keyExtractor={(item) => item.id}
       numColumns={2}
