@@ -42,6 +42,7 @@ if (__DEV__) {
 import "./utils/gestureHandler"
 
 import { useEffect, useState } from "react"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { useFonts } from "expo-font"
 import * as Linking from "expo-linking"
 import { KeyboardProvider } from "react-native-keyboard-controller"
@@ -62,22 +63,28 @@ export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 const prefix = Linking.createURL("/")
 const config = {
   screens: {
-    Login: {
-      path: "",
-    },
-    Welcome: "welcome",
-    Demo: {
+    Main: {
       screens: {
-        DemoShowroom: {
-          path: "showroom/:queryIndex?/:itemIndex?",
+        HomeTab: {
+          screens: {
+            Home: "",
+            RecipeDetail: "recipes/:id",
+          },
         },
-        DemoDebug: "debug",
-        DemoPodcastList: "podcast",
-        DemoCommunity: "community",
+        ExploreTab: {
+          screens: {
+            ExploreHome: "explore",
+            RecipeDetail: "explore/:id",
+          },
+        },
+        Favorites: "favorites",
+        Profile: "profile",
       },
     },
   },
 }
+
+const queryClient = new QueryClient()
 
 /**
  * This is the root component of our app.
@@ -121,11 +128,13 @@ export function App() {
       <KeyboardProvider>
         <AuthProvider>
           <ThemeProvider>
-            <AppNavigator
-              linking={linking}
-              initialState={initialNavigationState}
-              onStateChange={onNavigationStateChange}
-            />
+            <QueryClientProvider client={queryClient}>
+              <AppNavigator
+                linking={linking}
+                initialState={initialNavigationState}
+                onStateChange={onNavigationStateChange}
+              />
+            </QueryClientProvider>
           </ThemeProvider>
         </AuthProvider>
       </KeyboardProvider>

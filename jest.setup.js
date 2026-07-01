@@ -98,14 +98,50 @@ jest.mock('@shopify/flash-list', () => {
 });
 
 jest.mock('react-native-mmkv', () => {
+  const React = require('react');
+
+  class MMKV {
+    store = new Map();
+
+    set = jest.fn((key, value) => {
+      this.store.set(key, String(value));
+    });
+    getString = jest.fn((key) => this.store.get(key));
+    getNumber = jest.fn((key) => {
+      const value = this.store.get(key);
+      return value === undefined ? undefined : Number(value);
+    });
+    getBoolean = jest.fn((key) => {
+      const value = this.store.get(key);
+      return value === undefined ? undefined : value === 'true';
+    });
+    delete = jest.fn((key) => {
+      this.store.delete(key);
+    });
+    clearAll = jest.fn(() => {
+      this.store.clear();
+    });
+    getAllKeys = jest.fn(() => Array.from(this.store.keys()));
+  }
+
   return {
-    MMKV: class {
-      set = jest.fn();
-      getString = jest.fn();
-      getNumber = jest.fn();
-      getBoolean = jest.fn();
-      delete = jest.fn();
-      clearAll = jest.fn();
-    }
+    MMKV,
+    useMMKVString: (key) => {
+      const storage = React.useMemo(() => new MMKV(), []);
+      const [value, setValue] = React.useState(storage.getString(key));
+      const setStoredValue = React.useCallback(
+        (nextValue) => {
+          if (nextValue === undefined) {
+            storage.delete(key);
+            setValue(undefined);
+            return;
+          }
+          storage.set(key, nextValue);
+          setValue(nextValue);
+        },
+        [key, storage],
+      );
+      return [value, setStoredValue];
+    },
   };
 });

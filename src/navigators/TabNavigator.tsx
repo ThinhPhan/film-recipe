@@ -1,10 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { HomeScreen } from '../../screens/HomeScreen';
-import { ExploreScreen } from '../../screens/ExploreScreen';
-import { RecipeDetailScreen } from '../../screens/RecipeDetailScreen';
 import { View, Text } from 'react-native';
+
+import { HomeScreen } from '../screens/HomeScreen';
+import { ExploreScreen } from '../screens/ExploreScreen';
+import { RecipeDetailScreen } from '../screens/RecipeDetailScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();

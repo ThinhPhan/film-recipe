@@ -2,6 +2,16 @@
 
 A React Native mobile application built with a modern tech stack, featuring high-performance lists, state-of-the-art data fetching, and fluid animations.
 
+## Repository Harness
+
+This brownfield project now includes a Harness operating surface for future agent work:
+
+- Start with `AGENTS.md`.
+- Product truth lives in `docs/product/`.
+- Story packets live in `docs/stories/`.
+- Proof expectations live in `docs/TEST_MATRIX.md`.
+- Historical Specify artifacts remain in `specs/`.
+
 ## Technologies
 
 This project uses the following technologies and libraries:
@@ -98,4 +108,6 @@ npm test && npm run lint
 ```text
 src/       # Source code including components, screens, hooks, stores, navigation, etc.
 tests/     # Unit and integration tests
+docs/      # Harness product, story, validation, and decision docs
+specs/     # Historical Specify-generated specs and plans
 ```

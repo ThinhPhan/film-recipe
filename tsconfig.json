@@ -30,5 +30,13 @@
     }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
-  "exclude": ["**/node_modules", "**/Pods", "test/**/*"]
+  "exclude": [
+    "**/node_modules",
+    "**/Pods",
+    "test/**/*",
+    "**/* copy.ts",
+    "**/* copy.tsx",
+    "src/context/EpisodeContext.tsx",
+    "src/navigators/DemoNavigator.tsx"
+  ]
 }

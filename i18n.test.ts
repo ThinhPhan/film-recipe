@@ -1,6 +1,6 @@
 import { exec } from "child_process"
 
-import en from "../app/i18n/en"
+import en from "./src/i18n/en"
 
 // Use this array for keys that for whatever reason aren't greppable so they
 // don't hold your test suite hostage by always failing.
@@ -16,11 +16,12 @@ const EXCEPTIONS: string[] = [
   "hello",
 ]
 
-function iterate(obj, stack, array) {
+function iterate(obj: Record<string, unknown>, stack: string, array: string[]): string[] {
   for (const property in obj) {
     if (Object.prototype.hasOwnProperty.call(obj, property)) {
-      if (typeof (obj as object)[property] === "object") {
-        iterate(obj[property], `${stack}.${property}`, array)
+      const value = obj[property]
+      if (value && typeof value === "object") {
+        iterate(value as Record<string, unknown>, `${stack}.${property}`, array)
       } else {
         array.push(`${stack.slice(1)}.${property}`)
       }
@@ -55,9 +56,9 @@ describe("i18n", () => {
   test("There are no missing keys", (done) => {
     // Actual command output:
     // grep "[T\|t]x=[{]\?\"\S*\"[}]\?\|translate(\"\S*\"" -ohr './app' | grep -o "\".*\""
-    const command = `grep "[T\\|t]x=[{]\\?\\"\\S*\\"[}]\\?\\|translate(\\"\\S*\\"" -ohr './app' | grep -o "\\".*\\""`
+    const command = `grep "[T\\|t]x=[{]\\?\\"\\S*\\"[}]\\?\\|translate(\\"\\S*\\"" -ohr './src' | grep -o "\\".*\\""`
     exec(command, (_, stdout) => {
-      const allTranslationsDefinedOld = iterate(en, "", [])
+      const allTranslationsDefinedOld = iterate(en as Record<string, unknown>, "", [])
       // Replace first instance of "." because of i18next namespace separator
       const allTranslationsDefined = allTranslationsDefinedOld.map((key) => key.replace(".", ":"))
       const allTranslationsUsed = stdout.replace(/"/g, "").split("\n")

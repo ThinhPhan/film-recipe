@@ -36,7 +36,6 @@ export const MasonryGrid: React.FC<MasonryGridProps> = ({
       onEndReachedThreshold={0.5}
       onRefresh={onRefresh}
       refreshing={refreshing}
-      estimatedItemSize={200}
     />
   );
 };
